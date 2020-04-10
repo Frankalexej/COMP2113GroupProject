@@ -18,21 +18,39 @@ Yuan Jing
 
 -You may use any of the C/C++ libraries.
 ## Game Description
-It is a simple turn-based strategy, player versus player game. Set in a war background, one user acts one country and own its
-army and factories. 
-Once the game start, it will display a 2D map, consisting of different areas occupied by different countries. every area is 
-occupied by several amount of soldiers belonging to one country. 
-If two different armies (several soldiers) meet, they have to start a fight. The fighting result is determined by the amount
-of soldiers and the luck(determined by a dice), which will lead to deaths of soldiers. Once all the soldiers in one area are
-killed, this area will occupied by its enemy (who won this fight). 
-Player can still choose to build a factory in one empty and possessed area, which can generate soldiers in neighbor areas.
-The key part of this game is moving troops by users. In one turn, player A can choose to move certain amount of its soldiers 
-to neighbor areas, which could lead to a fight or just a change of army arrangement, and then player B has the same chance to 
-make a decision. The game ends if one occupy all areas.
-The status of this play can be stored and then next time, players can choose to continue working on its previous status.
-Rule: 
-method1: use ↑、↓、←、→ to move your cursor. once you decide to move this postion's troops, press "enter". then enter the number of soldiers you want to move and press ↑、↓、←、→ to select a direction.
-method2: enter the code or name of the area you decide to make changes. then enter the number of soldiers you want to move and enter "left" "right" "up" "down" to select a direction.
+This is a simple round-based strategy, player-versus-player game. Set in a war background, player acts as the commander of a country, who controls the army and factories.  
+Once the game starts, it will display a 2D map, consisting of different areas that can be occupied by troops of a country.  
+If two different armies (several soldiers) meet (that is, troops of two sides on one area), they can start a battle. The battle result is determined by the troops power (amount and type
+of soldiers) and the luck (determined by a random dice). Once all the soldiers in one area are
+killed, this area becomes empty and can be occupied by either side.  
+With an engineer, players can also choose to build a factory in any empty area, which can generate soldiers in neighboring areas.  
+  
+The key controlling part of this game is moving troops. In one round, player A can choose to move certain amount of its soldiers 
+to neighboring areas, which could lead to a fight or just a change of army/factory arrangement,then player B has the same chance to 
+make a decision. The game ends if one beats all troops of its enemy (or if one occupies the capital, depending on the setting).  
+Status of one game can be stored as .txt files and when loaded, can be restored.  
+
+## Rules: 
+### Control:
+-method1: use ↑、↓、←、→ to move your cursor. Once decided, press "enter". Then enter the number of soldiers you want to move and press ↑、↓、←、→ to select a direction or choose to set up a factory, if an engineer is chosen.  
+-method2: enter the coordinates of the area you decide to make changes. Then enter the number of soldiers you want to move and enter "left" "right" "up" "down" to select a direction or choose to set up a factory, if an engineer is chosen.  
+
+### Troops:
+There are several types of troops with different functions or capabilities.  
+-Soldier(兵) soldiers have an attack point of 1, a life of 1, and a portability of 1 block. A soldier costs 100 money to train.  
+-Engineer(工): engineers have an attack point of 0.5, a life of 1, and a portability of 1 block. An engineer costs 150 money to train.  
+-Light Armoured Vehicle(LAV) (車): LAVs have an attack point of 2, a life of 1.5, and a portability of 2 block. One LAV costs 300 money to build. 
+-Tank (炮): Tanks have an attack point of 3, a life of 2, and a portability of 1 block. A tank costs 500 money to build.  
+-More could be added accordingly.  
+
+### Factories:
+Factories(⌂) are build with an engineer and 1000 money. Players can choose to add new troops in areas within one block from the factories.  
+### Terrain:
+There will be three types of terrains.   
+-Land(■, colored normal): normal area that can be occupied with troops or factories.  
+-Sea(■, colored blue): areas for sea troops only (to be designed later).  
+-Mountains(■, colored green): forbidden area.  
+
 ## Features
 Use an stuct array to respent the coordinates of each position.
 stuct area should contain the country occpied and soldiers number of different countries(players).
