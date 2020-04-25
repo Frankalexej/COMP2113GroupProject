@@ -75,6 +75,7 @@ Random productiviy of areas and luck in battles.
 Maps, points, etc. as mentioned above.  
 
 #### Dynamic memory management: 
+The map size will be determined by the argument stored in .txt files and will be created dynamically. 
 Unused data will be `delete`d to free the memory. 
 
 #### File input/output
