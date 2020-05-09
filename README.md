@@ -18,41 +18,67 @@ Yuan Jing
 
 -You may use any of the C/C++ libraries.
 ## Game Description
-This is a simple round-based strategy, player-versus-player game. Set in a war background, player acts as the commander of a country, who controls the army and factories.  
-Once the game starts, it will display a 2D map, consisting of different areas that can be occupied by troops of a country.  
-If two different armies (several soldiers) meet (that is, troops of two sides on one area), they can start a battle. The battle result is determined by the troops power (amount and type
-of soldiers) and the luck (determined by a random dice). Once all the soldiers in one area are
-killed, this area becomes empty and can be occupied by either side.  
-With an engineer, players can also choose to build a factory in any empty area, which can generate soldiers in neighboring areas.  
-  
-The key controlling part of this game is moving troops. In one round, player A can choose to move certain amount of its soldiers 
-to neighboring areas, which could lead to a fight or just a change of army/factory arrangement,then player B has the same chance to 
-make a decision. The game ends if one beats all troops of its enemy (or if one occupies the capital, depending on the setting).  
-Status of one game can be stored as .txt files and when loaded, can be restored.  
+This is a simple round-based strategy, player-versus-player game. Setting in a war background, player acts as the commander of a country, who controls the army and factories.  
+Once the game starts, it will display a 2D grid map. Each grid has a terrain feature which is not changable. Different types of terrain have different features, one of which could be occupied by troops or buildings (which are called Occupier in game setting) 
+Two players could act in turn, including moving troops(maybe starting a battle), healing soldiers/building, gernerating troops, updating factories.  
+Note: The player can just choose make one change. i.e. He cannot do two things in one round.  
+Players should try his best to manage his army and factories to occupy enermy's capital.
 
 ## Rules: 
+### New game and load previous record:  
+Before starting playing, players can choose to start a new game or reload previous record.  
+Whatever, the players need to enter the map/record file name.  
+When one playing ends, status of one game can be chosed to store as .txt files.  
+
 ### Control:
--method1: use ↑、↓、←、→ to move your cursor. Once decided, press "enter". Then enter the number of soldiers you want to move and press ↑、↓、←、→ to select a direction or choose to set up a factory, if an engineer is chosen.  
--method2: enter the coordinates of the area you decide to make changes. Then enter the number of soldiers you want to move and enter "left" "right" "up" "down" to select a direction or choose to set up a factory, if an engineer is chosen.  
+-use w, s, a, d to move up, down, left, right your cursor respectively.  
+-press "e" to confirm.  
+-press esc to quit game.  
+-press q to step backwards????
 
-### Money:
-Money is accumulated each round according to the productivity in the areas occupied by the player.  Each player will have 500 money at the beginning.  
-
-### Troops:
-There are several types of troops with different functions or capabilities.  
--Soldier(`兵`) soldiers have an attack point of 1, a life of 1, and a portability of 1 block. A soldier costs 100 money to train.  
--Engineer(`工`): engineers have an attack point of 0.5, a life of 1, and a portability of 1 block. An engineer costs 150 money to train.  
--Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 2, a life of 1.5, and a portability of 2 block. One LAV costs 300 money to build. 
--Tank (`炮`): Tanks have an attack point of 3, a life of 2, and a portability of 1 block. A tank costs 500 money to build.  
--More could be added accordingly.  
-
-### Factories:
-Factories(`⌂`) are build with an engineer and 1000 money. Players can choose to add new troops in areas within one block from the factories.  
 ### Terrain:
 There will be three types of terrains.   
--Land(`■, colored normal`): normal area that can be occupied with troops or factories.  
--Sea(`■, colored blue`): areas for sea troops only (to be designed later).  
--Mountains(`■, colored green`): forbidden area.  
+-Land(`地`): normal area that can be occupied with troops or factories. Each land has its peoductivity level. 
+-Sea(`海`): forbidden area. 
+-Hill(`山`): forbidden area.  
+-Note: forbiiden area means it is ineffective to choose its as destination. Nothing can access this area.
+
+### Building:
+-Factory(`厰`) is build with an engineer with 1000 money. It has the function of gernerating troops. Factories have an attack point of 1 and life point of 20.  
+-Capital(`都`）is the heart of one country(one player). It also has the function of gernerating troops. Capitals have an attack point of 1 and life point of 20.  
+More importantly, Once the capital is occupied by this enermy（the other player), you lose.  
+-Note: Players can choose to generate new troops in one building's neighbouring area: 3*3 grids whose center is the building.  
+-Attack point: the hurt level it can cause to its attacher in each winning round.  
+-Life: How many losing round it can bear before its destroy. e.g. Life point is 20. If it is beaten for twenty rounds, it dies.
+
+### Money:
+-Money is accumulatively gernerated each round by the sum of the productivity of this player's capital and factories. 
+-Two players each will have 200 money initially.  
+
+### Troops:
+There are four types of troops with different functions or capabilities.  
+-Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1. A soldier costs 100 money to train.  
+-Engineer(`工`): engineers have an attack point of 1, a life of 2, and a portability of 1. An engineer costs 150 money to train.  
+Enigeeer' s primary function is to build factory (spend money to update `工` to `厰` in the same location)  
+-Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2 block. One LAV costs 300 money to build. 
+-Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1. A tank costs 600 money to build.  
+-Attack point: the hurt level it can cause to his enermy in each winning round.  
+-Life: How many failing round it can bear before death. e.g. Life point is 2. If it is beaten for two rounds, it dies.  
+-Portability:  
+1: it can move to 3*3 grids whose center is the troops' location.  
+2: it can move to 5*5 grids whose center is the troops' location.
+
+### Battle procedure:
+In a certain battle, it could have several rounds to cause one's death.  
+Each round's result is a random event gernerated by computer.
+In rach round, the winer will cause the loser's life decrease by the attack point of the winner.
+Once one side's life is 0 (or < 0 in coding level), it dies. The other side wins and occupy this grid.
+
+### Recover Life:
+Both Buildings and troops' life level can be recovered to its maximum level with certain cost. 
+
+### Winning condition:
+One player occupy the other one's capital.
 
 ## Features
 Presumably, we use objects to represent the troops, factories and terrains. They all derive from one base class.  
