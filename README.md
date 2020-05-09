@@ -31,23 +31,22 @@ When one playing ends, status of one game can be chosed to store as .txt files.
 
 ### Control:
 -use w, s, a, d to move up, down, left, right your cursor respectively.  
--press "e" to confirm.  
-It is used to choose occupiers, destinations.  
+-press "e" to confirm. It is used to choose occupiers, destinations.  
 -press esc to quit game.  
 -press q to step backwards????
 
 ### Terrain:
 There will be three types of terrains.   
--Land(`地`): normal area that can be occupied with troops or factories. Each land has its peoductivity level. 
--Sea(`海`): forbidden area.  
+-Land(`地`): normal area that can be occupied with troops or factories. Each land has its peoductivity level.  
+-Sea(`海`): forbidden area, which means it is ineffective to choose its as destination. Nothing can access this area.  
 -Hill(`山`): forbidden area.  
--Note: forbiiden area means it is ineffective to choose its as destination. Nothing can access this area.
+
 
 ### Building:
 -Factory(`厰`) is build with an engineer with 1000 money. It has the function of gernerating troops. Factories have an attack point of 1 and life point of 20.  
--Capital(`都`）is the heart of one country(one player). It also has the function of gernerating troops. Capitals have an attack point of 1 and life point of 20.  
-More importantly, Once the capital is occupied by this enermy（the other player), you lose.  
--Note: Players can choose to generate new troops in one building's neighbouring area: 3* 3 grids whose center is the building.  
+-Capital(`都`）is the heart of one country(one player). It also has the function of gernerating troops. Capitals have an attack point of 1 and life point of 20. More importantly, Once the capital is occupied by this enermy（the other player), you lose.  
+
+-Gernerating new troops: Players can choose to generate new troops in one building's neighbouring area: 3* 3 grids whose center is the building.  
 -Attack point: the hurt level it can cause to its attacher in each winning round.  
 -Life: How many losing round it can bear before its destroy. e.g. Life point is 20. If it is beaten for twenty rounds, it dies.
 
@@ -57,9 +56,9 @@ More importantly, Once the capital is occupied by this enermy（the other player
 
 ### Troops:
 There are four types of troops with different functions or capabilities.  
--Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1, and a cost of 100. 
+-Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1, and a cost of 100.  
 -Engineer(`工`): engineers have an attack point of 1, a life of 2, and a portability of 1, and a cost of 150. Its primary function is to build a factory, which means players can spend money to update `工` to `厰`.  
--Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2, and a cost of 300.
+-Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2, and a cost of 300.  
 -Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1, and a cost of 600.  
 -Attack point: the hurt level it can cause to his enermy in each winning round.  
 -Life: How many failing round it can bear before its death. e.g. Life point is 2. If it is beaten for two rounds, it dies.  
