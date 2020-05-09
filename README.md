@@ -30,7 +30,7 @@ Whatever, the players need to enter the map/record file name.
 When one playing ends, status of one game can be chosed to store as .txt files.  
 
 ### Control:
--use w, s, a, d to move up, down, left, right your cursor respectively.  
+-use w, s, a, d to move your cursor up, down, left, right respectively.  
 -press "e" to confirm. It is used to choose occupiers, destinations.  
 -press esc to quit game.  
 -press q to step backwards????
@@ -51,7 +51,7 @@ There will be three types of terrains.
 -Life point: How many hurt it can bear before its destroy. 
 
 ### Money:
--Money is accumulatively generated each round by the sum of the productivity of this player's capital and factories. 
+-Money is accumulatively generated each round by the sum of the productivity of this player's capital and factories.  
 -Two players each will have 200 money initially.  
 
 ### Troops:
