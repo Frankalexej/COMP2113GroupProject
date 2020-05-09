@@ -18,7 +18,9 @@ When players quit in the middle of the game, status of one game can be chosed to
 ### Control:
 -use "w", "s", "a", "d" to move your cursor up, down, left, right respectively.  
 -press "e" to confirm / proceed. It is used to choose occupiers, destinations, etc.  
--press "q" to return to previous step.  
+-press "q" to return to previous step. 
+-press "f" to skip a turn.
+-use "z", "x", "c", "v" to produce soldiers, engineers, lavs and tanks.
 -press esc to quit game.  
 
 ### Terrain:
