@@ -18,7 +18,7 @@ Tan Lihui, Yuan Jing
 -You may use any of the C/C++ libraries.
 ## Game Description
 This is a simple round-based strategy, player-versus-player game. Setting in a war background, player acts as the commander of a country, who controls the army and factories.  
-Once the game starts, it will display a 2D grid map. Each grid has a terrain feature which is not changable. Different types of terrain have different features, one of which could be occupied by troops or buildings (which are called Occupier in game setting) 
+Once the game starts, it will display a 2D grid map. Each grid has a terrain feature which is not changable. Different types of terrain have different features, one of which could be occupied by troops or buildings(which are called Occupiers).  
 Two players could act in turn, including moving troops(maybe starting a battle), healing soldiers/building, gernerating troops, updating factories.  
 Note: The player can just choose make one change. i.e. He cannot do two things in one round.  
 Players should try his best to manage his army and factories to occupy enermy's capital.
@@ -32,14 +32,14 @@ When one playing ends, status of one game can be chosed to store as .txt files.
 ### Control:
 -use w, s, a, d to move up, down, left, right your cursor respectively.  
 -press "e" to confirm.  
-It is used to choose occupiers, destinations.
+It is used to choose occupiers, destinations.  
 -press esc to quit game.  
 -press q to step backwards????
 
 ### Terrain:
 There will be three types of terrains.   
 -Land(`地`): normal area that can be occupied with troops or factories. Each land has its peoductivity level. 
--Sea(`海`): forbidden area. 
+-Sea(`海`): forbidden area.  
 -Hill(`山`): forbidden area.  
 -Note: forbiiden area means it is ineffective to choose its as destination. Nothing can access this area.
 
@@ -57,28 +57,27 @@ More importantly, Once the capital is occupied by this enermy（the other player
 
 ### Troops:
 There are four types of troops with different functions or capabilities.  
--Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1. A soldier costs 100 money to train.  
--Engineer(`工`): engineers have an attack point of 1, a life of 2, and a portability of 1. An engineer costs 150 money to train.  
-Enigeeer' s primary function is to build factory (spend money to update `工` to `厰` in the same location)  
--Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2 block. One LAV costs 300 money to build.  
--Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1. A tank costs 600 money to build.  
+-Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1, and a cost of 100. 
+-Engineer(`工`): engineers have an attack point of 1, a life of 2, and a portability of 1, and a cost of 150. Its primary function is to build a factory, which means players can spend money to update `工` to `厰`.  
+-Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2, and a cost of 300.
+-Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1, and a cost of 600.  
 -Attack point: the hurt level it can cause to his enermy in each winning round.  
--Life: How many failing round it can bear before death. e.g. Life point is 2. If it is beaten for two rounds, it dies.  
+-Life: How many failing round it can bear before its death. e.g. Life point is 2. If it is beaten for two rounds, it dies.  
 -Portability:  
 1: it can move to 3* 3 grids whose center is the troops' location.  
 2: it can move to 5* 5 grids whose center is the troops' location.
 
 ### Battle procedure:
-In a certain battle, it could have several rounds to cause one's death.  
-Each round's result is a random event gernerated by computer.
-In rach round, the winer will cause the loser's life decrease by the attack point of the winner.
-Once one side's life is 0 (or < 0 in coding level), it dies. The other side wins and occupy this grid.
+In a certain battle, it could have several rounds to cause one's death, which is an end of a battle.  
+Each round's result is a random event gernerated by computer.  
+In each round, the winer will cause the loser's life point decrease by the attack point of the winner.  
+Once one side's life point is 0 (or < 0 in coding level), it dies. The other side wins and occupies this grid.
 
 ### Recover Life:
 Both Buildings and troops' life level can be recovered to its maximum level with certain cost. 
 
 ### Winning condition:
-One player occupy the other one's capital.
+One player occupies the other one's capital.
 
 ## Features
 Presumably, we use objects to represent the troops, factories and terrains. They all derive from one base class.  
