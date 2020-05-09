@@ -112,17 +112,3 @@ Make main
 Please include ./maps/ and ./savings/ directories, these two are needed to access maps and savings.  
 Note: our template map is named as "Map1.txt"  
 (If you feel not good about map filled with Chinese characters, you may want to uncomment Symbol.h line 7-9 and comment line 14-16; however, this does not always work well.)
-
-  9. 
-Presumably, we use objects to represent the troops, factories and terrains. They all derive from one base class.  
-Use a two-dimensional array of the base class to respent map (each element, or point, represents one area).  
-
-The base class (`Point`) has `int x` and `int y`, representing the coordinates of this point, and a `string representation`, defining the representation of this point on the map. It has a `toLocation()` method, which updates the responsive location in the map.  
-
-`Terrain` derives from `Point`, it has a string attribute (`string type`), defining the type of terrain; it also has a `int productivity` attribute that provides information about how much money this area can generate each round. It also has a `toStorage()` method, which returns a storage object to an occupier (a troop or a factory) for storing the original type of terrain and its productivity.  
-
-`Occupier` derives from `Point` as well, it has a `Storage was` attribute, storing the terrain information of the area it occupies. It also has a `range` attribute, denoting the range it covers (ex. 1 for soldiers, engineers, tanks and factories, 2 for LAVs). In addition, it has `attackPoint` (refers to max amount of troops produceable by factories) and `life` attributes. It has `enter()` and `leave()` method that deals with the occupier moving to and leaving one point. It has a virtual `die()` method that requires further implementation accordingly.  
-
-`Troop` derives from `Occupier`. It has an additional attribute `int number`, denoting the number of troops on one point (note that only one type of troops is allowed on one point). It has `moveTo(int x, int y)` method, which changes the `x` and `y`, restores the original terrain from `was`, calls `leave()` and goes to the new point by calling `toLocation()`. There is also an `initiateBattle(int x, int y)`, which is called automatically upon the order of moving to a point with an `Occupier`. This method calls a `BattleManager` to draw a random number representing luck and calculate the total attack power of this troop and passes it to the `receiveBattle(type enemyAttackPower)` method of the enemy `Occupier`. Upon receiving the attack, the `receiveBattle()` does the same as the former and passes the `enemyAttackPower` to the `die()` method of the initiater, and then calls `die()` of itself. (**this requires further designing**). Note that `die()` of Troops counts down the `number` first and when `number = 0`, calls `leave()`.  
-
-`Factory` derives from `Occupier` as well. It has a series `makeX()` methods for producing new troops in the neiboring regions. It should also implement a `die()` method.  
