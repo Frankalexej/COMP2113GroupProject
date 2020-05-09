@@ -62,7 +62,7 @@ There are four types of troops with different functions or capabilities.
 -Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1, and a cost of 600. 
  
 -Attack point: the hurt level it can cause to his enermy in each winning round.  
--Life point: How many hurt points it can bear before its death.
+-Life point: How many hurt points it can bear before its death.  
 -Portability:  
 1: it can move to 3* 3 grids whose center is the troops' location.  
 2: it can move to 5* 5 grids whose center is the troops' location.
