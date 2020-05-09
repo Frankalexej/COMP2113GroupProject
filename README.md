@@ -4,11 +4,10 @@ This is the repo for COMP2113 Group Project (group 157)
 Tan Lihui, Yuan Jing
 
 ## Game Description
-This is a simple round-based strategy, player-versus-player game. Setting in a war background, player acts as the commander of a country, who controls the army and factories. 
+This is a simple round-based strategy, player-versus-player game. Setting in a war background, two players act as commanders of two hostile countries, who can control each side's army and factories to win the war (occupy enermy's capital). 
 Once the game starts, it will display a 2D grid map. Each grid has a terrain feature which is not changable. Different types of terrain have different features, one of which could be occupied by troops or buildings(which are called Occupiers).  
-Two players could act in turn, including moving troops(maybe starting a battle), healing soldiers/building, gernerating troops, updating factories.  
+Two players could act in turn, including moving troops(maybe starting a battle), healing soldiers/buildings, generating troops, building factories.  
 Note: The player can just choose make one change in one turn. i.e. He cannot do two things in one turn.  
-Players should try his best to manage his army and factories to occupy enermy's capital.
 
 ## Rules: 
 ### New game and load previous record:  
@@ -30,7 +29,7 @@ There will be three types of terrains.
 
 
 ### Buildings:
--Factory(`厰`) is build with an engineer with 1000 money. It has the function of generating troops. Factories have an attack point of 1 and life point of 20.  
+-Factory(`厰`) is build with an engineer and 1000 money. It has the function of generating troops. Factories have an attack point of 1 and life point of 20.  
 -Capital(`都`) is the heart of one country(one player). It also has the function of generating troops. Capitals have an attack point of 1 and life point of 20. More importantly, Once the capital is occupied by the enermy（the other player), you lose.  
 
 -Generating new troops: Players can choose to generate new troops in a building's neighbouring area: 3* 3 grids whose center is the building.  
@@ -43,16 +42,18 @@ There will be three types of terrains.
 
 ### Troops:
 There are four types of troops with different functions or capabilities.  
--Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1, and a cost of 100.  
--Engineer(`工`): engineers have an attack point of 1, a life of 2, and a portability of 1, and a cost of 150. Its primary function is to build a factory, which means players can spend money to update `工` to `厰`.  
--Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2, and a cost of 300.  
--Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1, and a cost of 600. 
+-Soldier(`兵`) soldiers have an attack point of 2, a life point of 2, and a portability of 1, and a cost of 100.  
+-Engineer(`工`): engineers have an attack point of 1, a life point of 2, and a portability of 1, and a cost of 150. Its primary function is to build a factory, which means players can spend money to update `工` to `厰`.  
+-Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life point of 3, and a portability of 2, and a cost of 300.  
+-Tank (`炮`): Tanks have an attack point of 6, a life point of 5, and a portability of 1, and a cost of 600. 
  
 -Attack point: the hurt level it can cause to his enermy in each winning round.  
 -Life point: How many hurt points it can bear before its death.  
 -Portability:  
 1: it can move to 3* 3 grids whose center is the troops' location.  
-2: it can move to 5* 5 grids whose center is the troops' location.
+2: it can move to 5* 5 grids whose center is the troops' location.  
+-Cost: How much it needs to deduct from accumulated money.
+
 
 ### Battle procedure:
 In a certain battle, it could have several rounds to cause one's death, which is an end of a battle.  
