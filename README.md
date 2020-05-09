@@ -2,20 +2,7 @@
 This is the repo for COMP2113 Group Project (group 157)
 ## Group Member
 Tan Lihui, Yuan Jing
-## Requirements (temporal)
-1. Generation of random game sets or events
-2. Data structures for storing game status
-3. Dynamic memory management
-4. File input/output (e.g., for loading/saving game status)
-5. Program codes in multiple files
-6. Proper indentation and naming styles
-7. In-code documentation
 
--Commit comment should not be empty and should be written sensibly.
-
--For each function, comments on “what it does”, “what the inputs are” and “what the outputs are” are needed.
-
--You may use any of the C/C++ libraries.
 ## Game Description
 This is a simple round-based strategy, player-versus-player game. Setting in a war background, player acts as the commander of a country, who controls the army and factories. 
 Once the game starts, it will display a 2D grid map. Each grid has a terrain feature which is not changable. Different types of terrain have different features, one of which could be occupied by troops or buildings(which are called Occupiers).  
@@ -115,7 +102,15 @@ In each battle, the two sides (attacker & defender) will perform multiple attack
 Different functions and classes packed in different .cpp files, they rely on each other via .h files.
 
 
-9. 
+### non-standard C/C++ libraries:
+what features/functions in your game are supported by these libraries.
+
+### Compilation and execution instructions:
+Make main  
+./main  
+Note: our template map is named as "Map1.txt"
+
+  9. 
 Presumably, we use objects to represent the troops, factories and terrains. They all derive from one base class.  
 Use a two-dimensional array of the base class to respent map (each element, or point, represents one area).  
 
