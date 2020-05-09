@@ -32,6 +32,13 @@ Initialiser::Initialiser(bool readFromTxt) {
 	else Initialiser();
 }
 
+Initialiser::~Initialiser()
+{
+	delete land, hill, sea;
+	delete soldier, engineer, lav, tank, factory, capital;
+	delete keyboard;
+}
+
 Terrain* Initialiser::getLand() {
 	return this->land;
 }

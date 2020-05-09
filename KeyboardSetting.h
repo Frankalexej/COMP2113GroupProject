@@ -36,6 +36,11 @@ struct KeyboardSetting {
 		this->lav = new Key("c", 'c');
 		this->tank = new Key("v", 'v');
 	}
+	~KeyboardSetting() {
+		delete exit, formerStep, nextStep, skip;
+		delete cursorUp, cursorDown, cursorLeft, cursorRight;
+		delete soldier, engineer, lav, tank;
+	}
 
 	Key* exit, * formerStep, * nextStep, * skip;
 	Key* cursorUp, * cursorDown, * cursorLeft, * cursorRight;	// cursor movement

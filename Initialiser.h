@@ -12,6 +12,7 @@ private:
 public:
 	Initialiser();	// initialisation without reading
 	Initialiser(bool readFromTxt);	//initialisation with reading, not implemented, not important
+	~Initialiser();
 
 	// simple getters
 	Terrain* getLand();
