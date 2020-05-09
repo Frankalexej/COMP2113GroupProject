@@ -79,10 +79,10 @@ the game utilises symbols and ANSI escape sequence to implement a colorful graph
 ### Process (partially) organised in classes: 
 this segments the whole game process into work achieved by different objects. Like functions, it also simplifies co-ordination between groupmates. Classes are more convient in that it can include many data and functions. One may simply include a header file without implementation in order to use features not yet implemented by the other groupmate.
 
-#### 1. Random game settings and events:
+### 1. Random game settings and events:
 In each battle, the two sides (attacker & defender) will perform multiple attacks, in each attack, chance decides who attacks whom. This is assure a better balance between different types of troops. 
 
-#### 2. Data structures for storing game status: 
+### 2. Data structures for storing game status: 
 ##### Most data are organized in classes, for example:
 -location(x, y), graphical representation, type of Point(soldier, engineer, tank, ...), attack, life, etc. in Point. 
 -part of the data above stored in Passer classes.
@@ -92,16 +92,16 @@ In each battle, the two sides (attacker & defender) will perform multiple attack
 ##### Struct used to organize data as a "package"
 ##### Union used in Point so as to save memory
 
-#### 3. Dynamic memory management: 
+### 3. Dynamic memory management: 
 ##### The two-dimensional array map is `new`ed according to the height and width stated in maps or savings files.
 ##### After a Point is discarded (Occupier destroyed or Terrain occupierd), the union Pass and the information OccupierPasser / TerrainPasser in the union will be `delete`ed so as to release the memory. 
 ##### Other data, such as the array in Map, initialization data in Initialiser and ConfigInitiator and game status in GameMediator are also deleted (in destructors); however, these all live until the end of the program, therefore it is not that important.
 
-#### 4. File input/output
+### 4. File input/output
 -input: maps or game status records (from archive at last exit time).  
 -output: to archive game status when exiting with save chosen.  
 
-#### 5. Program codes in multiple files: 
+### 5. Program codes in multiple files: 
 Different functions and classes packed in different .cpp files, they rely on each other via .h files.
 
 
@@ -114,3 +114,6 @@ Make main
 Please include ./maps/ and ./savings/ directories, these two are needed to access maps and savings.  
 Note: our template map is named as "Map1.txt"  
 (If you feel not good about map filled with Chinese characters, you may want to uncomment Symbol.h line 7-9 and comment line 14-16; however, this does not always work well.)
+
+### Class brief and relationship
+![Classes](https://github.com/Frankalexej/COMP2113GroupProject/blob/master/ClassDiagram.png)
