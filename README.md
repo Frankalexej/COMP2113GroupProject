@@ -109,3 +109,7 @@ Unused data will be `delete`d to free the memory.
 
 #### Program codes in multiple files: 
 Different functions and classes will be packed in different .cpp files. 
+## Compilation and execution instructions:  
+Make main  
+./main
+Our template map is named as "Map1".
