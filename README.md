@@ -102,15 +102,15 @@ In each battle, the two sides (attacker & defender) will perform multiple attack
 Different functions and classes packed in different .cpp files, they rely on each other via .h files.
 
 
-### non-standard C/C++ libraries:
+### Non-standard C/C++ libraries:
 termio.h: used in GameListener.cpp, used to listen to keyboard events
 
 ### Compilation and execution instructions:
 Make main  
 ./main  
-Note: our template map is named as "Map1.txt"
-Please include ./maps/ and ./savings/ directories, these two are needed to access maps and savings.
-(If you fill not good about map filled with Chinese characters, you may want to uncomment Symbol.h line 7-9 and comment line 14-16; however, this does not always work well.)
+Please include ./maps/ and ./savings/ directories, these two are needed to access maps and savings.  
+Note: our template map is named as "Map1.txt"  
+(If you feel not good about map filled with Chinese characters, you may want to uncomment Symbol.h line 7-9 and comment line 14-16; however, this does not always work well.)
 
   9. 
 Presumably, we use objects to represent the troops, factories and terrains. They all derive from one base class.  
