@@ -1,8 +1,7 @@
 # COMP2113GroupProject
 This is the repo for COMP2113 Group Project (group 157)
 ## Group Member
-Tan Lihui
-Yuan Jing
+Tan Lihui, Yuan Jing
 ## Requirements (temporal)
 1. Generation of random game sets or events
 2. Data structures for storing game status
@@ -33,6 +32,7 @@ When one playing ends, status of one game can be chosed to store as .txt files.
 ### Control:
 -use w, s, a, d to move up, down, left, right your cursor respectively.  
 -press "e" to confirm.  
+It is used to choose occupiers, destinations.
 -press esc to quit game.  
 -press q to step backwards????
 
@@ -47,7 +47,7 @@ There will be three types of terrains.
 -Factory(`厰`) is build with an engineer with 1000 money. It has the function of gernerating troops. Factories have an attack point of 1 and life point of 20.  
 -Capital(`都`）is the heart of one country(one player). It also has the function of gernerating troops. Capitals have an attack point of 1 and life point of 20.  
 More importantly, Once the capital is occupied by this enermy（the other player), you lose.  
--Note: Players can choose to generate new troops in one building's neighbouring area: 3*3 grids whose center is the building.  
+-Note: Players can choose to generate new troops in one building's neighbouring area: 3* 3 grids whose center is the building.  
 -Attack point: the hurt level it can cause to its attacher in each winning round.  
 -Life: How many losing round it can bear before its destroy. e.g. Life point is 20. If it is beaten for twenty rounds, it dies.
 
@@ -60,13 +60,13 @@ There are four types of troops with different functions or capabilities.
 -Soldier(`兵`) soldiers have an attack point of 2, a life of 2, and a portability of 1. A soldier costs 100 money to train.  
 -Engineer(`工`): engineers have an attack point of 1, a life of 2, and a portability of 1. An engineer costs 150 money to train.  
 Enigeeer' s primary function is to build factory (spend money to update `工` to `厰` in the same location)  
--Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2 block. One LAV costs 300 money to build. 
+-Light Armoured Vehicle(LAV) (`車`): LAVs have an attack point of 4, a life of 3, and a portability of 2 block. One LAV costs 300 money to build.  
 -Tank (`炮`): Tanks have an attack point of 6, a life of 5, and a portability of 1. A tank costs 600 money to build.  
 -Attack point: the hurt level it can cause to his enermy in each winning round.  
 -Life: How many failing round it can bear before death. e.g. Life point is 2. If it is beaten for two rounds, it dies.  
 -Portability:  
-1: it can move to 3*3 grids whose center is the troops' location.  
-2: it can move to 5*5 grids whose center is the troops' location.
+1: it can move to 3* 3 grids whose center is the troops' location.  
+2: it can move to 5* 5 grids whose center is the troops' location.
 
 ### Battle procedure:
 In a certain battle, it could have several rounds to cause one's death.  
